@@ -103,3 +103,6 @@ C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MV
 C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.csproj.CopyComplete
 C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.dll
 C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\bin\SAT.DATA.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\bin\SAT.DATA.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\10_PMFD\SAT\src\SAT.UI.MVC\bin\SAT.DATA.EF.dll.config

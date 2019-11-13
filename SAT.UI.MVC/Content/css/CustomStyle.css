@@ -1,0 +1,7 @@
+﻿body {
+}
+
+/*Home Tiles*/
+.tiles article {
+    width: calc(25% - 2.5em);
+}

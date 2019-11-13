@@ -13,13 +13,13 @@ namespace SAT.UI.MVC.Controllers
     public class CoursesController : Controller
     {
         private SATEntities db = new SATEntities();
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: Courses
         public ActionResult Index()
         {
             return View(db.Courses.ToList());
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,13 +34,13 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Create
         public ActionResult Create()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: Courses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -57,7 +57,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -72,7 +72,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: Courses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -88,7 +88,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -103,7 +103,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

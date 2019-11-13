@@ -13,14 +13,14 @@ namespace SAT.UI.MVC.Controllers
     public class ScheduledClassesController : Controller
     {
         private SATEntities db = new SATEntities();
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses
         public ActionResult Index()
         {
             var scheduledClasses = db.ScheduledClasses.Include(s => s.Cours).Include(s => s.ScheduledClassStatu);
             return View(scheduledClasses.ToList());
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,7 +35,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Create
         public ActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCISD = new SelectList(db.ScheduledClassStatus1, "SCSID", "SCName");
             return View();
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // POST: ScheduledClasses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -62,7 +62,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCISD = new SelectList(db.ScheduledClassStatus1, "SCSID", "SCName", scheduledClass.SCISD);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -79,7 +79,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCISD = new SelectList(db.ScheduledClassStatus1, "SCSID", "SCName", scheduledClass.SCISD);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // POST: ScheduledClasses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -97,7 +97,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCISD = new SelectList(db.ScheduledClassStatus1, "SCSID", "SCName", scheduledClass.SCISD);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -112,7 +112,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: ScheduledClasses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

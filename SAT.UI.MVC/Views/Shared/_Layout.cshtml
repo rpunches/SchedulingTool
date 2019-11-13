@@ -22,8 +22,8 @@
             <div class="inner">
 
                 <!-- Logo -->
-                <a href="index.html" class="logo">
-                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+                <a href="@Url.Action("Index", "Home")" class="logo">
+                    <span class="symbol"><i class="fas fa-home"></i></span><span class="title">SAT</span>
                 </a>
 
                 <!-- Nav -->
@@ -48,7 +48,6 @@
                 <li><a href="@Url.Action("Index", "Enrollments")">Enrollment</a></li>
                 <li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
                 <li><a href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
-
                 @if (User.IsInRole("Admin"))
                 {
                     <li>
@@ -56,9 +55,14 @@
                         <ul>
                             <li><a href="@Url.Action("Index", "UsersAdmin")">User's Admin</a></li>
                             <li><a href="@Url.Action("Index", "RolesAdmin")">Role's Admin</a></li>
+                            <li><a href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
+                            <li><a href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Status</a></li>
+
                         </ul>
                     </li>
                 }
+                <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+
             </ul>
         </nav>
 
@@ -74,7 +78,7 @@
         <!-- Footer -->
         <footer id="footer">
             <div class="inner">
-                <section>
+                @*<section>
                     <h2>Get in touch</h2>
                     <form method="post" action="#">
                         <div class="fields">
@@ -92,7 +96,7 @@
                             <li><input type="submit" value="Send" class="primary" /></li>
                         </ul>
                     </form>
-                </section>
+                </section>*@
                 <section>
                     <h2>Follow</h2>
                     <ul class="icons">

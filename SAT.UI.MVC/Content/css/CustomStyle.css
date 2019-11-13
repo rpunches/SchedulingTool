@@ -1,12 +1,46 @@
 ﻿body {
+    font-family: 'Noto Serif', serif;
 }
-
 /*Home Tiles*/
 .tiles article {
     width: calc(25% - 2.5em);
 }
 
+    .tiles article.style1 > .image:before {
+        background-color: #C9E4FF;
+    }
+    .tiles article.style2 > .image:before {
+        background-color: #3E5F80;
+    }
+    .tiles article.style3 > .image:before {
+        background-color: #7DBEFF;
+    }
+    .tiles article.style4 > .image:before {
+        background-color: #657280;
+    }
+
 /*Header tile*/
 #header .logo > * {
     font-size: 4em;
+}
+
+#header {
+    padding: 2em 0 0.1em 0;
+}
+
+/*Index Header*/
+#wrapper > * > .inner {
+    text-align: center;
+}
+
+a:hover {
+    border-bottom-color: transparent;
+    color: #C9E4FF !important;
+}
+
+
+
+#footer {
+    margin-top: 6em;
+    padding: 3em 0 1em 0;
 }

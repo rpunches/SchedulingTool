@@ -59,7 +59,13 @@ namespace SAT.DATA.EF//.Metadata
         public int SSID { get; set; }
     }
     [MetadataType(typeof(StudentMetadata))]
-    public partial class Student { }
+    public partial class Student {
+        [Display(Name = "Student")]
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
+    }
     #endregion
 
 

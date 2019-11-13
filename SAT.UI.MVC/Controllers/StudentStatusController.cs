@@ -21,6 +21,10 @@ namespace SAT.UI.MVC.Controllers
             return View(db.StudentStatuses.ToList());
         }
 
+        public ActionResult IndexTiles() {
+            return View(db.StudentStatuses.ToList());
+        }
+
         // GET: StudentStatus/Details/5
         public ActionResult Details(int? id)
         {
@@ -115,6 +119,8 @@ namespace SAT.UI.MVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+       
 
         protected override void Dispose(bool disposing)
         {

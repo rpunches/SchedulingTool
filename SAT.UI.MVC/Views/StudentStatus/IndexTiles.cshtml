@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SAT.DATA.EF.StudentStatus>
+
+@{
+    ViewBag.Title = "Student Statuses";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div style="margin: .3em; padding .1em; border-radius: 5px; min-width: 250px; text-align: center; max-width: fit-content;">
+                <dl class="dl-horizontal">
+                    <dd>
+                        <a href="@Url.Action("Details", new { id = item.SSID})" title="@item.SSName">
+                            @*<img src="~/Content/images/person-placeholder.jpg" alt="@item.FullName" style="max-width: 150px;" />*@
+
+                    <dd><strong>@Html.DisplayFor(modelItem => item.SSName)</strong></dd> </a>
+                    <dd>  @Html.DisplayFor(modelItem => item.SSDescription)</dd>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <dd>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SSName }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.ActorID }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SSName })
+                        </dd>
+                    }
+                    </dd>
+
+                </dl>
+
+            </div>
+        </div>
+
+    }
+</div>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SSName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SSDescription)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SSID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SSID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SSID })
+            </td>
+        </tr>
+    }
+
+    </table>*@

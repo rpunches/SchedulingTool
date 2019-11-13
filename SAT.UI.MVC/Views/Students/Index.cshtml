@@ -12,7 +12,37 @@
 </p>
 }
 
-<table class="table">
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div style="margin: .3em; padding .1em; border-radius: 5px; min-width: 250px; text-align: center; max-width: fit-content;">
+                <dl class="dl-horizontal">
+                    <dd>
+                        <a href="@Url.Action("Details", new { id = item.StudentId})" title="@item.FullName">
+                            <img src="~/Content/images/person-placeholder.jpg" alt="@item.FullName" style="max-width: 150px;" />
+
+                    <dd><strong>@Html.DisplayFor(modelItem => item.FullName)</strong></dd> </a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <dd>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.ActorID }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                        </dd>
+                    }
+                    </dd>
+
+                </dl>
+
+            </div>
+        </div>
+
+    }
+</div>
+
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -99,4 +129,4 @@
     </tr>
 }
 
-</table>
+</table>*@

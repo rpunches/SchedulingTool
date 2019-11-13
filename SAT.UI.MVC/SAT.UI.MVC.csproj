@@ -174,7 +174,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\ScheduledClassesController.cs" />
-    <Compile Include="Controllers\ScheduledClassStatusController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentStatusController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
@@ -409,11 +408,6 @@
     <Content Include="Views\StudentStatus\Details.cshtml" />
     <Content Include="Views\StudentStatus\Edit.cshtml" />
     <Content Include="Views\StudentStatus\Index.cshtml" />
-    <Content Include="Views\ScheduledClassStatus\Create.cshtml" />
-    <Content Include="Views\ScheduledClassStatus\Delete.cshtml" />
-    <Content Include="Views\ScheduledClassStatus\Details.cshtml" />
-    <Content Include="Views\ScheduledClassStatus\Edit.cshtml" />
-    <Content Include="Views\ScheduledClassStatus\Index.cshtml" />
     <Content Include="Views\ScheduledClasses\Create.cshtml" />
     <Content Include="Views\ScheduledClasses\Delete.cshtml" />
     <Content Include="Views\ScheduledClasses\Details.cshtml" />

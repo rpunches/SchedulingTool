@@ -1,10 +1,10 @@
 ﻿@model SAT.DATA.EF.Course
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit " + Model.CourseName;
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())
@@ -76,7 +76,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Course List", "Index")
 </div>
 
 @section Scripts {

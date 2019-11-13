@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Courses";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 @if (User.IsInRole("Admin"))
 {
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Add New Course", "Create")
     </p>
 }
 

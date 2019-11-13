@@ -5,3 +5,8 @@
 .tiles article {
     width: calc(25% - 2.5em);
 }
+
+/*Header tile*/
+#header .logo > * {
+    font-size: 4em;
+}

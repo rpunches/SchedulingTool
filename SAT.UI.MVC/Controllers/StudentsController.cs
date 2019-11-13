@@ -35,14 +35,14 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(student);
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // GET: Students/Create
         public ActionResult Create()
         {
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
             return View();
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -60,7 +60,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -76,7 +76,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -93,7 +93,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -108,7 +108,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(student);
         }
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin")]
         // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

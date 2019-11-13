@@ -1,6 +1,11 @@
 ﻿body {
     font-family: 'Noto Serif', serif;
 }
+
+#menu {
+    background-color: #657280;
+}
+
 /*Home Tiles*/
 .tiles article {
     width: calc(25% - 2.5em);
@@ -16,16 +21,23 @@
         background-color: #7DBEFF;
     }
     .tiles article.style4 > .image:before {
-        background-color: #657280;
+        background-color: #779ecb;
     }
 
 /*Header tile*/
 #header .logo > * {
     font-size: 4em;
+   }
+#header .logo {
+    margin: 0;
 }
 
 #header {
     padding: 2em 0 0.1em 0;
+    background-color: #657280;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: white;
 }
 
 /*Index Header*/
@@ -38,7 +50,9 @@ a:hover {
     color: #C9E4FF !important;
 }
 
-
+.tiles{
+    justify-content: center;
+}
 
 #footer {
     margin-top: 6em;

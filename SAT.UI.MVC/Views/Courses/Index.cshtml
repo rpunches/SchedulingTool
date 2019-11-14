@@ -39,37 +39,51 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreditHours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Curriculum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.CourseId })
-                @if (User.IsInRole("Admin"))
-                {
-                    @:|
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
-                    @:|
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+    <tr>
+
+        <td>
+        <a href="  @Url.Action("Details", "Courses")">
+
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </a>
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curriculum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @if (User.IsInRole("Admin"))
+            {
+
+             
+
+
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
+                if (item.IsActive != true)
+                { @:|
+                    @Html.ActionLink("Activate", "Delete", new { id = item.CourseId })
+                }
+                else
+                { @:|
+                    @Html.ActionLink("De-Activate", "Delete", new { id = item.CourseId })
                 }
 
-            </td>
-        </tr>
+            }
+        </td>
+    </tr>
     }
 
 </table>

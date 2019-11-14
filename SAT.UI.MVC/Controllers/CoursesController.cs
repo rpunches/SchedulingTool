@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using SAT.DATA.EF;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using SAT.DATA.EF;
 
 namespace SAT.UI.MVC.Controllers
 {
@@ -19,6 +15,11 @@ namespace SAT.UI.MVC.Controllers
         {
             return View(db.Courses.ToList());
         }
+
+      
+
+        
+
         [Authorize(Roles = "Admin, Scheduling")]
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
@@ -104,13 +105,24 @@ namespace SAT.UI.MVC.Controllers
             return View(course);
         }
         [Authorize(Roles = "Admin")]
-        // POST: Courses/Delete/5
+        //POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
-            db.Courses.Remove(course);
+
+            if (course.IsActive != true)
+            {
+                course.IsActive = true;
+            }
+            else
+            {
+                course.IsActive = false;
+            }
+
+
+            //db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

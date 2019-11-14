@@ -197,7 +197,11 @@
     <Content Include="Content\css\fontawesome-all.min.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\noscript.css" />
+    <Content Include="Content\images\jacob.jpg" />
+    <Content Include="Content\images\jasmyne.jpg" />
+    <Content Include="Content\images\kendra.jpg" />
     <Content Include="Content\images\logo.svg" />
+    <Content Include="Content\images\nicholas.jpg" />
     <Content Include="Content\images\person-placeholder.jpg" />
     <Content Include="Content\images\pic01.jpg" />
     <Content Include="Content\images\pic02.jpg" />

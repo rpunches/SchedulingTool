@@ -60,6 +60,8 @@ namespace SAT.DATA.EF//.Metadata
     }
     [MetadataType(typeof(StudentMetadata))]
     public partial class Student {
+        public static object ID { get; set; }
+
         [Display(Name = "Student")]
         public string FullName
         {
@@ -99,7 +101,9 @@ namespace SAT.DATA.EF//.Metadata
         public string SCName { get; set; }
     }
     [MetadataType(typeof(ScheduledClassStatusMetadata))]
-    public partial class ScheduledClassStatus { }
+    public partial class ScheduledClassStatus {
+  
+    }
     #endregion
 
 
@@ -133,7 +137,14 @@ namespace SAT.DATA.EF//.Metadata
         public int SCISD { get; set; }
     }
     [MetadataType(typeof(ScheduledClassMetadata))]
-    public partial class ScheduledClass { }
+    public partial class ScheduledClass
+    {
+        [Display(Name = "Class Summary")]
+        public string ClassSummary
+        {
+            get { return $"{StartDate:d}" + " | " + Cours.CourseName + " | " + Location; }
+        }
+    }
     #endregion
 
 
@@ -189,6 +200,7 @@ namespace SAT.DATA.EF//.Metadata
         public string Notes { get; set; }
 
         [Required(ErrorMessage ="*")]
+        [Display(Name = "Active")]
         public bool IsActive { get; set; }
     }
 

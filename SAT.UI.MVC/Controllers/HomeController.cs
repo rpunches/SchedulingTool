@@ -45,7 +45,7 @@ namespace SAT.UI.MVC.Controllers
             string message = $"Email from {cvm.Name} <br/>Email Address: {cvm.Email}<br/>Subject: {cvm.Subject}</br>Message:<br/>{cvm.Message}";
 
             //what sends the email
-            MailMessage mm = new MailMessage("admin@rachelpunches.com", "rpunches@gmail.com", null, message);
+            MailMessage mm = new MailMessage("", null, message);
 
             //mail message properties
             //allow html formatting in email
@@ -56,9 +56,9 @@ namespace SAT.UI.MVC.Controllers
             mm.ReplyToList.Add(cvm.Email);
 
             //info from host - allow email to be sent
-            SmtpClient client = new SmtpClient("mail.rachelpunches.com");
+            SmtpClient client = new SmtpClient("");
             //client credentials
-            client.Credentials = new NetworkCredential("admin@rachelpunches.com", "Optimus!!11");
+            client.Credentials = new NetworkCredential("");
 
             // try/catch
             try

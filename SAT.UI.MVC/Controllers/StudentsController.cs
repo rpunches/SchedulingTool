@@ -17,17 +17,11 @@ namespace SAT.UI.MVC.Controllers
         // GET: Students
         public ActionResult Index()
         {
-            //return list of current students that are enrolled in a class
-            //var enrolled = (from e in db.Enrollments
-            //                join s in db.Enrollments on e.StudentId equals s.Student.StudentId
-            //                select new { e.StudentId, s.Student, }).ToList();
-
-            //ViewBag.Enrolled = enrolled;
-
-            //var enrolled = db.Enrollments.Where(i => i.Student.StudentId == Enrollmen;
-            //var enrolled = db.Enrollments.Where(id => id.StudentId));
-            //ViewBag.Enrolled = enrolled;
-
+            SATEntities ctx = new SATEntities();
+            if (ctx.Enrollments.Count() > 0)
+            {
+                
+            }
             var students = db.Students.Include(s => s.StudentStatus);
             return View(students.ToList());
         }

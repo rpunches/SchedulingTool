@@ -22,7 +22,7 @@ namespace SAT.DATA.EF//.Metadata
         public string LastName { get; set; }
 
         [StringLength(15, ErrorMessage = "* Major cannot be more than 15 characters.")]
-        [DisplayFormat(NullDisplayText ="N/A")]
+        [DisplayFormat(NullDisplayText = "N/A")]
         public string Major { get; set; }
 
         [StringLength(50, ErrorMessage = "* Address cannot be more than 50 characters.")]
@@ -46,7 +46,7 @@ namespace SAT.DATA.EF//.Metadata
         [DisplayFormat(NullDisplayText = "N/A")]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage ="*")]
+        [Required(ErrorMessage = "*")]
         [StringLength(60, ErrorMessage = "* Email cannot be more than 60 characters.")]
         public string Email { get; set; }
 
@@ -66,6 +66,12 @@ namespace SAT.DATA.EF//.Metadata
         public string FullName
         {
             get { return FirstName + " " + LastName; }
+        }
+
+        [Display(Name = "Address")]
+        public string FullAddress
+        { 
+             get { return Address + " | " + City + ", " + State + " " + ZipCode;}
         }
     }
     #endregion

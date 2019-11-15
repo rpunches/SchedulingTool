@@ -1908,11 +1908,11 @@ input, select, textarea {
 		dl dt {
 			display: block;
 			font-weight: 900;
-			margin: 0 0 1em 0;
+			margin: 1em 0 0 0;
 		}
 
 		dl dd {
-			margin-left: 2em;
+			margin-left: 0;
 		}
 
 /* Actions */

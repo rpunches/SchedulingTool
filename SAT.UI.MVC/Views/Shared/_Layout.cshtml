@@ -9,7 +9,7 @@
     <title>Phantom by HTML5 UP</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/css/main.css" />
     <noscript><link rel="stylesheet" href="~/Content/css/noscript.css" /></noscript>
     <link href="~/Content/css/CustomStyle.css" rel="stylesheet" />
@@ -23,12 +23,14 @@
             <div class="inner">
 
                 <!-- Logo -->
-                <a href="@Url.Action("Index", "Home")" class="logo">
-                    <span class="symbol"><i class="fas fa-graduation-cap"></i></span><span class="title">S.A.T.</span>
-                </a>
+                <div id="banner">
+                    <a href="@Url.Action("Index", "Home")" class="logo">
+                        <span class="symbol"><i class="fas fa-graduation-cap"></i></span><span class="title">S.A.T.</span>
+                    </a>
                     <h1>
                         Scheduling Administrative Tool
                     </h1>
+                </div>
                 
 
                 <!-- Nav -->
@@ -100,7 +102,7 @@
                         </ul>
                     </form>
                 </section>*@
-                <section style="margin: 0 auto;">
+                @*<section style="margin: 0 auto;">
                     <h2>Follow</h2>
                     <ul class="icons">
                         <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
@@ -112,7 +114,7 @@
                         <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
                         <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                     </ul>
-                </section>
+                </section>*@
                 <ul class="copyright">
                     <li>&copy; Untitled. All rights reserved</li>
                     <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
